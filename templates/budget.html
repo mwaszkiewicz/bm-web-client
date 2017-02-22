@@ -1,0 +1,35 @@
+<div class="container">
+    <h1>Modify current Budget state</h1>
+
+    <form name="budgetForm" novalidate>
+
+   <div class="form-group" ng-class="{ 'has-error': budgetForm.state.$touched && budgetForm.state.$invalid }">
+     <label>Amount</label>
+     <input type="text" name="state" class="form-control"
+       ng-model="budget.state"
+       required>
+
+     <div class="help-block" ng-messages="budgetForm.state.$error" ng-if="budgetForm.state.$touched">
+       <p ng-message="required">Amount is required.</p>
+     </div>
+   </div>
+
+   <div class="form-group" ng-class="{ 'has-error': budgetForm.date.$touched && budgetForm.date.$invalid }">
+     <label>Date</label>
+     <input type="date" name="date" class="form-control"
+       ng-model="budget.date"
+       required>
+
+     <div class="help-block" ng-messages="budgetForm.date.$error" ng-if="budgetForm.date.$touched">
+     <p ng-message="required">Budget date is required.</p>
+     </div>
+   </div>
+
+
+   <div class="form-group">
+     <button type="submit" class="btn btn-danger" ng-click="newBudget()" ng-disabled="budgetForm.$invalid">Submit</button>
+   </div>
+
+ </form>
+
+</div>

@@ -1,5 +1,3 @@
-//Routing definiowanie trasy dla stron
-//definicja widokow oraz odpowiadajace im kontrolery
 angular.module('app')
     .config(function($routeProvider) {
         $routeProvider
@@ -14,5 +12,13 @@ angular.module('app')
             .when('/transactions', {
                 controller: 'TransactionsCtrl',
                 templateUrl: 'transactions.html'
+            })
+            .when('/budget', {
+                controller: 'BudgetCtrl',
+                templateUrl: 'budget.html'
+            })
+            .when('/budgets', {
+                controller: 'BudgetsCtrl',
+                templateUrl: 'budgets.html'
             });
     });
