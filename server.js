@@ -8,8 +8,7 @@ var router = express.Router()
 
 router.use(bodyParser.json())
 router.use(express.static(__dirname + '/assets'));
-router.use(express.static(__dirname + '/templates'));
-router.use('libs', express.static(__dirname + '/libs'));
+router.use(express.static(__dirname + '/views'));
 router.get('/', function(req, res) {
     res.sendfile('layouts/app.html')
 });
@@ -17,5 +16,5 @@ router.get('/', function(req, res) {
 app.use(router);
 
 app.listen(3070, function() {
-    console.log('Serwer nasluchuje na porcie numer', 3070);
+    console.log('Application is running on', 3070);
 });
